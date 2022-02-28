@@ -11,6 +11,7 @@ function App() {
         <Button btnType={ButtonType.Primary} disabled>i am a button</Button>
         <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>i am a large button</Button>
         <Button btnType={ButtonType.Danger} size={ButtonSize.Large}>i am a large button</Button>
+        <Button btnType={ButtonType.Danger} size={ButtonSize.Large} autoFocus={true}>i am a large button</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
