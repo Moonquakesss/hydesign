@@ -13,11 +13,13 @@
     &:hover, &:focus {
       text-decoration: none;
     }
+    // 细节：当disabled时，pointer-events 没有任何效果
     &.is-disabled {
       color: $menu-item-disabled-color;
       pointer-events: none;
       cursor: default ;
     }
+    // 选择或者悬浮时，底侧（默认为水平）的border-left为选中时的颜色
     &.is-active, &:hover {
       color: $menu-item-active-color;
       border-bottom: $menu-item-active-border-width solid $menu-item-active-color;

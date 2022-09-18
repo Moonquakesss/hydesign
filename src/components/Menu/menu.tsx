@@ -1,5 +1,6 @@
 import classNames from "classnames"
 import React, { createContext, useState } from "react";
+import { MenuItemProps } from './menuItem'
 
 type Mode = 'horizontal' | 'vertical'
 
@@ -34,11 +35,21 @@ const Menu: React.FC<MenuProps> = (props) => {
     index: currentActive ? currentActive : 0,
     onSelect: handleClick,
   }
+  const renderChildren = () => {
+    return React.Children.map(children, (child: any, index: number) => {
+      const childElement = child as React.FunctionComponentElement<MenuItemProps>
+      if (childElement.type.displayName === 'menu-item') {
+        return React.cloneElement(child, { index })
+      } else {
+        console.error('Warning: Menu有一个child不属于MenuItem！')
+      }
+    })
+  }
   return (
     <>
       <MenuContext.Provider value={passedContext}>
         <ul className={classes} style={style} data-testid="test-menu">
-          {children}
+          {renderChildren()}
         </ul>
       </MenuContext.Provider>
     </>

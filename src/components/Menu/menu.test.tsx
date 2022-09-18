@@ -4,7 +4,7 @@ import Menu, { MenuProps } from './menu'
 import MenuItem, { MenuItemProps } from './menuItem'
 
 const testMenuProps: MenuProps = {
-  defaultIndex: 1,
+  defaultIndex: 0,
   onSelect: jest.fn(),
   className: 'test'
 }
@@ -17,13 +17,13 @@ const testVerticalProps: MenuProps = {
 // 要测试的组件
 const NiceMenu = (props: MenuProps) => (
   <Menu {...props}>
-    <MenuItem index={1}>
+    <MenuItem>
       active
     </MenuItem>
-    <MenuItem index={2} disabled>
+    <MenuItem disabled>
       disabled
     </MenuItem>
-    <MenuItem index={3}>
+    <MenuItem>
       xyz
     </MenuItem>
   </Menu>
@@ -56,10 +56,10 @@ describe('test Menu and MenuItem component', () => {
     fireEvent.click(thirdItem)
     expect(thirdItem).toHaveClass('is-active')
     expect(activeElement).not.toHaveClass('is-active')
-    // 期望 onSelect 函数被调用，且传参为3
-    expect(testMenuProps.onSelect).toHaveBeenCalledWith(3)
+    // 期望 onSelect 函数被调用，且传参为2
+    expect(testMenuProps.onSelect).toHaveBeenCalledWith(2)
     fireEvent.click(disabledElement)
-    expect(testMenuProps.onSelect).not.toHaveBeenCalledWith(2)
+    expect(testMenuProps.onSelect).not.toHaveBeenCalledWith(1)
   })
 
   test('是否切换为vertical模式进行渲染', () => {

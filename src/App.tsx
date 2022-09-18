@@ -7,13 +7,13 @@ function App() {
   return (
     <div className="App">
       <Menu className={""} mode={"vertical"} onSelect={(index) => alert(index)}>
-        <MenuItem index={1}>
+        <MenuItem>
           1
         </MenuItem>
-        <MenuItem index={2} disabled>
+        <MenuItem disabled>
           2
         </MenuItem>
-        <MenuItem index={3}>
+        <MenuItem>
           3
         </MenuItem>
       </Menu>
