@@ -22,7 +22,7 @@
     border-color: $hover-border;
   }
   &:focus,
-  // focus类
+  // 除了focus伪类外的focus类
   &.focus {
     color: $hover-color;
     background: $hover-background;
@@ -34,4 +34,14 @@
     background: $background;
     border-color: $border;
   }
+}
+
+@mixin alert-style (
+  $background,
+  $border,
+  $color,
+) {
+  color: $color;
+  background: $background;
+  border-color: $border;
 }

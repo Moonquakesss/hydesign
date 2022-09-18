@@ -1,5 +1,5 @@
 // 我们给每个全局变量都添加 !default 关键字
-// 即如果该变量已经赋值 则不会重新赋值
+// 即如果该变量已经赋值 (用户自定义了颜色) 则不会重新赋值（不会赋该值了 ）
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -209,6 +209,8 @@ $btn-border-radius-lg:        $border-radius-lg !default;
 $btn-border-radius-sm:        $border-radius-sm !default;
 
 $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
+
+// alert样式
 
 // menu
 $menu-border-width:            $border-width !default;

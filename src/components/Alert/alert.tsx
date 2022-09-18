@@ -8,20 +8,42 @@ export enum AlertType {
 }
 
 interface BaseAlertProps {
-  message: string;
+  title: string;
   type: AlertType;
   description: string;
+  onClose: () => void;
+  closable: boolean;
+  children: React.ReactNode;
 }
 
-const Alert: React.FC<BaseAlertProps> = (props) => {
+const Alert: React.FC<Partial<BaseAlertProps>> = (props) => {
   const {
-    message,
+    title,
     type,
-    description
+    description,
+    onClose,
+    closable,
+    ...restProps
   } = props
-  const classes = classNames()
+  const classes = classNames('alert', {
+    [`alert-${type}`]: type
+  })
   return (
-    <div></div>
+    <div className={classes} {...restProps}>
+      {
+        description ? (
+          <>
+            <p>{title}</p>
+            <p>{description}</p>
+          </>
+        ) : (
+          <>
+            <p>{title}</p>
+          </>
+        )
+      }
+      <span onClick={() => onClose && onClose()}>关闭</span>
+    </div>
   )
 }
 

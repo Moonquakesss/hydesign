@@ -1,16 +1,5 @@
-// stylelint-disable at-rule-no-vendor-prefix, declaration-no-important, selector-no-qualifying-type, property-no-vendor-prefix
-
-// Reboot
-//
-// Normalization of HTML elements, manually forked from Normalize.css to remove
-// styles targeting irrelevant browsers while applying new styles.
-//
-// Normalize is licensed MIT. https://github.com/necolas/normalize.css
-
-
-// Document
-//
-// Change from `box-sizing: content-box` so that `width` is not affected by `padding` or `border`.
+// normalize.css 的基础上修改的
+// 这里加 下划线 是告诉scss这个样式是需要import到其他地方进行使用的 默认不进行编译
 *,
 *::before,
 *::after {

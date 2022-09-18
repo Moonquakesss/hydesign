@@ -1,0 +1,22 @@
+.alert {
+  position: absolute;
+  width: 80%;
+  line-height: 25px;
+  margin-left: 10%;
+}
+
+.alert-default {
+ @include alert-style($primary, $primary, $white)
+}
+
+.alert-success {
+  @include alert-style($green, $green, $white)
+}
+
+.alert-warning {
+  @include alert-style($yellow, $yellow, $white)
+}
+
+.alert-danger {
+  @include alert-style($red, $red, $white)
+}

@@ -21,8 +21,17 @@ interface BaseButtonProps {
   children?: React.ReactNode;
 }
 
+/**
+ * button 标签原始属性
+ */
 type NativeButtonProps = React.ButtonHTMLAttributes<HTMLElement>
+/**
+ * link 标签原始属性
+ */
 type NativeAnchorProps = React.AnchorHTMLAttributes<HTMLElement>
+/**
+ * button 和 link 的属性 都设置为可选的
+ */
 export type ButtonProps = Partial<BaseButtonProps & NativeButtonProps & NativeAnchorProps>
 
 const Button: React.FC<ButtonProps> = (props) => {
@@ -41,7 +50,7 @@ const Button: React.FC<ButtonProps> = (props) => {
     // 当btnType 为 true 时 则添加上这个class
     [`btn-${btnType}`]: btnType,
     [`btn-${size}`]: size,
-    // 给 link 类型添加 disabled 的 class（因为他没有这个属性）
+    // 给 link 类型添加 disabled 的 class（因为a标签没有这个属性）
     'disabled': (btnType === ButtonType.Link) && disabled
   })
 
