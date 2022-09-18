@@ -7,8 +7,8 @@ type selectedCallBack = (selectedIndex: number) => void;
 
 export interface MenuProps {
   defaultIndex?: number;
-  className: string;
-  mode: Mode;
+  className?: string;
+  mode?: Mode;
   style?: React.CSSProperties;
   onSelect?: selectedCallBack;
 }
@@ -37,7 +37,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   return (
     <>
       <MenuContext.Provider value={passedContext}>
-        <ul className={classes} style={style}>
+        <ul className={classes} style={style} data-testid="test-menu">
           {children}
         </ul>
       </MenuContext.Provider>
